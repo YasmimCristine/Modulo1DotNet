@@ -1,0 +1,49 @@
+programa {
+    inclua biblioteca Matematica --> Mat
+    
+	funcao inicio() {
+			///A prefeitura de uma cidade fez uma pesquisa entre 20 de seus habitantes,
+           ///coletando dados sobre o salário e número de filhos. A prefeitura deseja saber:
+           ///a) média do salário da população;
+           ///b) média do número de filhos;
+           ///c) maior salário;
+          ///d) percentual de pessoas com salário até R$100,00.
+          real salario = 0.00
+          inteiro filhos = 0
+          real mediaSalarios = 0.00
+          real totalSalarios = 0.00
+          real mediaFilhos = 0.00
+          real totalFilhos = 0.00
+          real maiorSalario = 0.00
+          real pessoasAte100 = 0.00
+          const inteiro HABITANTES = 3
+          real totalP100 = 0.00
+         
+          para (inteiro x=1; x<=HABITANTES; x++ ) {
+            escreva ("Informe seu salario: ")
+            leia (salario)
+            escreva("Informe a quantidade de filhos: ")
+            leia (filhos)  
+            totalSalarios = totalSalarios + salario
+            totalFilhos = totalFilhos + filhos
+            se (salario > maiorSalario) {
+                maiorSalario = salario
+                
+            }
+            se (salario <= 100){
+                totalP100++
+            }
+          }
+          mediaSalarios = totalSalarios / HABITANTES
+          mediaFilhos = totalFilhos / HABITANTES
+          pessoasAte100 = (totalP100 / HABITANTES)*100
+          
+          escreva("\nA média salarial é: R$ ", Mat.arredondar (mediaSalarios, 2 ))
+          escreva("\nA média de filhos é: ",Mat.arredondar (mediaFilhos, 2 ))
+          escreva("\nO maior salario informado é: ", maiorSalario)
+          escreva("\nPercentual de pessoas com salario até R$ 100,00 : ",Mat.arredondar(pessoasAte100, 2), "%")
+	}
+	     
+	     
+}
+
